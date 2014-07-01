@@ -34,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet id<DARecycledScrollViewDelegate> delegate;
 
 - (DARecycledTileView *)dequeueRecycledTileView;
+- (void)scrollToTileViewAtIndex:(NSUInteger)index animated:(BOOL)animated;
 - (void)reloadData;
 
 @end
