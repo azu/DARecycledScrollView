@@ -1,5 +1,7 @@
-DARecycledScrollView
+Fork: DARecycledScrollView
 ====================
+
+### It's Fork of [daria-kopaliani/DARecycledScrollView](https://github.com/daria-kopaliani/DARecycledScrollView "daria-kopaliani/DARecycledScrollView").
 
 A UIScrollView subclass that reuses its tile views very much like UITableView does: there is a dataSource object which is used to configure scroll view subviews.
 
@@ -13,12 +15,25 @@ Features
 - Infinite scrolling has never been easier - there is a boolean flag 'infinite',
 - Subviews layout is updated nicely after user interface rotations.
 
+### Fork +
+
+- Apply [DataSource IBOutlet, delegate protocol, tile selection by balazskiss · Pull Request #5 · daria-kopaliani/DARecycledScrollView](https://github.com/daria-kopaliani/DARecycledScrollView/pull/5 "DataSource IBOutlet, delegate protocol, tile selection by balazskiss · Pull Request #5 · daria-kopaliani/DARecycledScrollView")
+- Apply [Added method to scroll to specific tile at index by billburgess · Pull Request #9 · daria-kopaliani/DARecycledScrollView](https://github.com/daria-kopaliani/DARecycledScrollView/pull/9 "Added method to scroll to specific tile at index by billburgess · Pull Request #9 · daria-kopaliani/DARecycledScrollView")
+- Add `- (void)didAppearScrollView:(DARecycledScrollView *)scrollView configureTileView:(DARecycledTileView *)tileView forIndex:(NSUInteger)index;`
+    - This delegate to know which cell is showed.
+
 
 Installation
 ==============
 
 Just drag&drop DARecycledScrollView and DARecycledTileView classes in your project
 (Cocoa pod is coming)
+
+### CocoaPods
+
+```
+pod 'DARecycledScrollView', :git => "https://github.com/azu/DARecycledScrollView.git"
+```
 
 
 Usage
