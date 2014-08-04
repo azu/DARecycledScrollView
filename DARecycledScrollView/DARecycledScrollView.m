@@ -131,7 +131,7 @@
 - (void)configureTileView:(DARecycledTileView *)tileView forIndex:(NSUInteger)index
 {
     CGFloat width = [self widthForTileAtIndex:index];
-	CGRect tileViewFrame = CGRectMake(0., 0., width, self.frame.size.height);
+	CGRect tileViewFrame = CGRectMake(0, 0, width, self.frame.size.height);
     tileViewFrame.origin.x = [self combinedWidthForTilesUntilIndex:index];
     tileViewFrame.size.width = width;
     tileView.frame = tileViewFrame;
@@ -215,7 +215,7 @@
 
 - (CGFloat)combinedWidthForTilesUntilIndex:(NSInteger)index
 {
-    CGFloat width = 0.;
+    CGFloat width = 0;
     for (NSInteger i = 0; i < index; i++) {
         width += [self widthForTileAtIndex:i];
     }
