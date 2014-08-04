@@ -198,18 +198,20 @@
 
     for (NSUInteger index = firstNeededTileIndex; index <= lastNeededTileIndex; index++) {
         NSInteger page = floorf((float)index / (float)[self tilesCount]);
-        NSInteger actualIndex = (index < [self tilesCount]) ? index : index - page * [self tilesCount];
+        NSUInteger actualIndex = (index < [self tilesCount]) ? index : index - page * [self tilesCount];
+        DARecycledTileView *tileView;
         if (![self isDisplayingTileForIndex:index]) {
-            DARecycledTileView *tileView = [self.dataSource tileViewForRecycledScrollView:self];
+            tileView = [self.dataSource tileViewForRecycledScrollView:self];
             tileView.index = index;
             [self configureTileView:tileView forIndex:index];
             [self insertSubview:tileView atIndex:0];            
             [self.visibleTileViews addObject:tileView];
             [self.dataSource recycledScrollView:self configureTileView:tileView forIndex:actualIndex];
         } else {
-            DARecycledTileView *tileView = [self visibleTileViewForIndex:index];
+            tileView = [self visibleTileViewForIndex:index];
             [self configureTileView:tileView forIndex:index];
         }
+        [self.dataSource didAppearScrollView:self configureTileView:tileView forIndex:actualIndex];
     }
 }
 

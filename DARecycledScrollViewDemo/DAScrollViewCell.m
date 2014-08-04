@@ -25,6 +25,7 @@
 {
     [super awakeFromNib];
     self.scrollView.dataSource = self;
+    self.scrollView.delegate = self;
 }
 
 - (void)setImages:(NSArray *)images
@@ -57,10 +58,19 @@
     return tileView;
 }
 
+- (void)didAppearScrollView:(DARecycledScrollView *) scrollView configureTileView:(DARecycledTileView *) tileView forIndex:(NSUInteger) index {
+    NSLog(@"index = %u", index);
+}
+
 - (CGFloat)widthForTileAtIndex:(NSInteger)index scrollView:(DARecycledScrollView *)scrollView
 {
     UIImage *image = self.images[index];
     return image.size.width;
 }
+
+- (void)recycledScrollView:(DARecycledScrollView *) scrollView didSelectTileAtIndex:(NSUInteger) index {
+
+}
+
 
 @end

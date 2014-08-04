@@ -15,6 +15,7 @@
 
 - (NSInteger)numberOfTilesInScrollView:(DARecycledScrollView *)scrollView;
 - (void)recycledScrollView:(DARecycledScrollView *)scrollView configureTileView:(DARecycledTileView *)tileView forIndex:(NSUInteger)index;
+- (void)didAppearScrollView:(DARecycledScrollView *)scrollView configureTileView:(DARecycledTileView *)tileView forIndex:(NSUInteger)index;
 - (DARecycledTileView *)tileViewForRecycledScrollView:(DARecycledScrollView *)scrollView;
 - (CGFloat)widthForTileAtIndex:(NSInteger)index scrollView:(DARecycledScrollView *)scrollView;
 

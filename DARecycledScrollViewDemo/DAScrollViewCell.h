@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DARecycledScrollView.h"
 
 
 @class DARecycledScrollView;
 
-@interface DAScrollViewCell : UITableViewCell
+@interface DAScrollViewCell : UITableViewCell <DARecycledScrollViewDelegate>
 
 @property (strong, nonatomic) NSArray *images;
 @property (readonly, strong, nonatomic) DARecycledScrollView *scrollView;
